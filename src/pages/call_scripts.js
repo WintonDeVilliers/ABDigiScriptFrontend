@@ -20,11 +20,11 @@ export default function Call_scripts() {
           <div className={styles.dropdown_content}>
               <Link href="/">Home Page</Link>
               <Link href="/products">Products</Link>
-              <Link href="/future_feature">Future Feature</Link>
               <Link href="#">Processes</Link>
+              <Link href="/future_feature">Future Thingz</Link>
           </div>
-        </div>
-                <div className={styles.dropdown}>
+      </div>
+      <div className={styles.dropdown}>
           <Link  href="#OPEN">CALL-SCRIPTS</Link>
           <div className={styles.dropdown_content}>
               <Link href="/">SALES OutBound</Link>
@@ -98,9 +98,9 @@ export default function Call_scripts() {
                   </div>
                   {/* HOOK BUTTONS END */}
                   <p>Customer Name, African Bank would like to invite you
-                   to apply for our<br />exciting products
-                  such as a personal loan,consolidation loan or a<br /> credit card,
-                  and for us to complete the application it might take ±10 minutes</p>
+                   to apply for our exciting products such as a personal loan 
+                   ,consolidation loan or a credit card,
+                   and for us to complete the application it might take ±10 minutes</p>
                   <div>
                   <p />
                   <br />
@@ -679,7 +679,6 @@ export default function Call_scripts() {
                     <li>Esse voluptate deserunt deserunt officia ullamco cupidatat officia dolore occaecat.</li>
                     <li>Sit nostrud excepteur duis cupidatat culpa quis anim anim.</li>
                  </ol>
-
                 <h2><u>Fraud Alert</u></h2>
                 Mollit laboris adipisicing voluptate eu et consequat dolore qui reprehenderit amet reprehenderit sint.
                  Magna est culpa incididunt consectetur. Fugiat deserunt tempor sint mollit laboris veniam minim in.
@@ -701,8 +700,6 @@ export default function Call_scripts() {
           {/* *CARD CONATAINER END* */}
       </div>
       {/* APPLICATION OUTCOME SECTION END */}
-
-
       {/* <Footer />     */}
    </>
  )

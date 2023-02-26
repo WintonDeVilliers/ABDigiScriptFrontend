@@ -1,0 +1,27 @@
+.header{
+    padding: 24px;
+    /* padding-left: 194px; */
+    display: flex;
+    align-items: center;
+    /* border-color: #333;
+    border-style: solid; */
+    /* background-image: url("bank-story-bg.jpg"); */
+  }
+.navigation{
+  flex-grow: 1;
+  margin-left: 40px;
+}
+
+.navigation_item{
+  text-decoration: none;
+  color: #bdbdbd;
+  margin-left: 20px;
+}
+
+.navigation_item:first-child{
+  margin-left: 0;
+}
+
+.navigation_item__active{
+  color: #333;
+}

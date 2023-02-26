@@ -1,0 +1,285 @@
+.csnavbar {
+  display: flex;
+  padding: 20px;
+  overflow: hidden;
+  background: #002b60;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+overflow: visible;
+  font: 12px 'opensans-bold', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    margin: 0 auto;
+    z-index: 100;
+    position: fixed;
+    left: 0;
+}
+
+
+
+
+.csnav_img{
+    width: 100px;
+    height: 60px;
+    border-radius: 50%;
+    padding-bottom: 8px;
+    
+
+}
+
+/* Links inside the navbar */
+.csnavbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change background on mouse-over */
+.csnavbar a:hover {
+  background: #ddd;
+  color: black;
+}
+ 
+.headline{
+font-size: 52px;
+/* font-weight: 500; */
+font-weight: bolder;
+color: #d8d8d8;
+margin: 0;
+padding-top: 54px;
+padding-left: 24px;
+}
+/* Main content */
+.csmain {
+  margin-top: 100px; /* Add a top margin to avoid content overlay */
+}
+
+.open_section{
+    display: grid;
+    grid-template-rows: 1fr auto;
+    padding-top: 96px;
+    padding-bottom: 6px;
+    overflow: hidden;
+    
+    
+
+}
+
+.cards {
+background-image: url("/strytellrs.jpg");
+background-size:650px;
+padding-top: 24px;
+padding-left: 10px;
+padding-right: 10px;
+padding-bottom: 10px;
+/* display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-auto-rows: repeat(24, 1fr);
+grid-gap: 1rem; */
+display: flex;
+flex-wrap: wrap;
+flex-direction: row;
+}
+
+
+.card {
+
+/* font-size: 17px; */
+padding: 15px;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3); 
+width: fit-content;
+height: fit-content;
+border-radius: 4px;
+float: left;
+padding: 0 10px;
+background-color: #E9EFFF;
+transition: 0.2s;
+font-size: large;
+flex: 10%;
+margin: 0.5%;
+}
+
+.card:hover{
+  background-color: #2f75e7;
+  color: white;
+}
+
+
+.p{
+  font-size: large;
+}
+
+.a{
+  font-size: large;
+  color: white;
+}
+/* Style the button */
+
+/* Style the tooltip text */
+
+
+
+
+.flxbtngroup{
+  display: flex;
+  /* flex-direction: column; */
+  align-items:flex-start;
+  /* padding-left: 47px; */
+}
+
+
+
+/****************************************** responsive settings **********************/
+
+@media (max-width: 980px) {
+  .cards{
+    flex: 100%;
+    flex-direction: column;
+  }
+}
+
+/*#######################################################NEW HOVER SETTINGS ###########################################*/
+
+.wrapper {
+/* text-transform: uppercase; */
+background: #E5C388;
+color: #555;
+ border-radius: 6px;
+cursor: help;
+/* font-family: "Gill Sans", Impact, sans-serif; */
+font-size: 13px;
+padding: 5px 10px;
+margin: 0.1%;
+/* position: relative; */
+text-align: center;
+width: fit-content;
+-webkit-transform:translateZ(0);
+-webkit-font-smoothing:antialiased; /* webkit text rendering fix */
+}
+
+.wrapper .tooltip {
+background: #1496bb;
+bottom: 100%;
+color: #f4f1f1;
+font-size: 15px;
+font-weight:600;
+display: block;
+left: -20px;
+margin-bottom: 15px;
+opacity: 0;
+padding: 20px;
+pointer-events: none;
+/* IN CARD HOV */
+position: absolute;
+width: max-content;
+-webkit-transform: translateY(10px);
+  -moz-transform: translateY(10px);
+  -ms-transform: translateY(10px);
+   -o-transform: translateY(10px);
+    transform: translateY(10px);
+-webkit-transition: all .25s ease-out;
+  -moz-transition: all .25s ease-out;
+  -ms-transition: all .25s ease-out;
+   -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+-webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+  -moz-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+  -ms-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+   -o-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+}
+
+/* This bridges the gap so you can mouse into the tooltip without it disappearing */
+
+.wrapper .tooltip:before {
+bottom: -20px;
+content: " ";
+display: block;
+height: 20px;
+left: 0;
+position: absolute;
+width: 100%;
+}
+
+/* CSS Triangles - see Trevor's post */
+.wrapper .tooltip:after {
+border-left: solid transparent 10px;
+border-right: solid transparent 10px;
+border-top: solid #1496bb 10px;
+bottom: -10px;
+content: " ";
+height: 0;
+left: 50%;
+margin-left: -13px;
+position: absolute;
+width: 0;
+}
+
+.wrapper:hover .tooltip {
+opacity: 1;
+pointer-events: auto;
+-webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+   -o-transform: translateY(0px);
+    transform: translateY(0px);
+}
+
+/* IE can just show/hide with no transition */
+.wrapper .tooltip {
+display: none;
+}
+
+.wrapper:hover .tooltip {
+display: block;
+}
+
+
+/*#######################################################TOP NAV HOVER ###########################################*/
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.csnavbar a:hover, .dropdown:hover .dropbtn {
+  background-color:#ddd;
+}
+
+.dropdown_content {
+  display: none;
+  position:absolute;
+  top: 50px;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
+.dropdown_content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown_content a:hover {
+  background-color: #1496bb ;
+  color: #ddd;
+}
+
+.dropdown:hover .dropdown_content {
+  display: block;
+}
+

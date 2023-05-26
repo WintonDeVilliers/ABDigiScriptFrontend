@@ -1,6 +1,6 @@
 import Footer from "@/components/Footer"
 import styles from '../styles/Home.module.css'
-import Header from "@/components/Header"
+import Header from "@/components/HomePageHeader"
 // import styles from '../styles/FutureFeature.module.css'
 
 export default function Home() {

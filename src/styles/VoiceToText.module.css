@@ -1,0 +1,54 @@
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.tableContainer {
+  margin-bottom: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+  border: 1px solid #000; /* Add a solid border */
+}
+
+.table th,
+.table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #ccc;
+}
+
+.voiceToTextContainer {
+  text-align: center;
+  display: flex; /* Add flex display */
+  flex-direction: column; /* Stack the children elements vertically */
+  align-items: center; /* Center align the children elements */
+}
+
+.heading {
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.buttonsContainer {
+  margin-top: 16px; /* Adjust margin-top instead of margin-bottom */
+  display: flex; /* Add flex display */
+  justify-content: center; /* Center align the buttons horizontally */
+}
+
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0 5px; /* Add some margin between the buttons */
+}

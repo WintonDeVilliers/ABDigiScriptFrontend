@@ -1,29 +1,18 @@
 import styles from '../styles/Scripts.module.css'
 import Link from 'next/link'
-
+import ProductPageHeader from '../components/ProductPageHeader';
 
 export default function Products(){
 
     return(
         <>
-      <div className={styles.csnavbar}>
-      <div className={styles.dropdown}>
-          <Link  href="#">MENU</Link>
-          <div className={styles.dropdown_content}>
-              <Link href="/">Home Page</Link>
-              <Link href="/call_scripts">Call Scripts</Link>
-              <Link href="/call_scripts">PROCESSES</Link>
-              <Link href="/future_feature">Future-Feature</Link>
-              <Link href="#">XXX</Link>
-          </div>
-      </div>
-        <Link href="#LOANS">LOANS</Link>
-        <Link href="#CREDITCARD">Credit-Card</Link>
-        <Link href="#TECHDEALS">Tech Deals</Link>
-        <Link href="#INVESTMENTS">Investments</Link>
-      </div>
-        <div id="LOANS" className={styles.open_section}></div>
-            <h1 className={styles.headline}>LOAN PRODUCTS</h1>
+        <ProductPageHeader/>
+ 
+        <div id="LOANS" className={styles.open_section}>
+        <h1 className={styles.headline}>
+        <mark className={styles.mark}>LOAN PRODUCTS</mark>
+        </h1>
+        </div>
             <div className={styles.cards}>
                 <div className={styles.card}>
                 <h2>Personal Loan</h2>
@@ -86,10 +75,13 @@ export default function Products(){
                 </ul>
         </div>
 
-        </div>
+            </div>
 
         <div id='CREDITCARD' className={styles.open_section}>
-            <h1 className={styles.headline}>Credit Card</h1>
+            <h1 className={styles.headline}>
+            <mark className={styles.mark}>CREDIT CARD</mark>
+            </h1>
+        </div>
             <div className={styles.cards}>
 
                 <div className={styles.card}>
@@ -154,11 +146,12 @@ export default function Products(){
                 </p>
                 </div>
             </div>
-        </div> 
-
-
+        
         <div id='TECHDEALS' className={styles.open_section}>
-            <h1 className={styles.headline}>Tech Deals</h1>
+            <h1 className={styles.headline}>
+            <mark className={styles.mark}>TECH DEALS</mark>
+            </h1>
+        </div>
             <div className={styles.cards}>
                 <div className={styles.card}>
                 <h2>Tech Deals</h2>
@@ -216,7 +209,7 @@ export default function Products(){
             </div>
         
         
-        </div>  
+          
         </>
     )
 }

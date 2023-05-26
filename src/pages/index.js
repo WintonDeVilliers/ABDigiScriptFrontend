@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer"
 import styles from '../styles/Home.module.css'
-import Header from "@/components/Header"
+import Header from "@/components/HomePageHeader"
+import HomePageHeader from "@/components/HomePageHeader"
 
 
 export default function Home() {
@@ -8,10 +9,9 @@ export default function Home() {
     <>
      
      <div className={styles.container}>
-          <Header />
+          <HomePageHeader />
       <div className={styles.main}>
       <div className={styles.main_content}>
-
        <h1 className={styles.headline}>Audacity to Believe</h1>
           <h4 className={styles.headline_2}>Where we come from...</h4>
           <div>

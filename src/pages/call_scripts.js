@@ -1,48 +1,30 @@
 import styles from '../styles/Scripts.module.css';
 import Footer from "@/components/Footer"
-
+import CallScriptHeader from '@/components/CallScriptHeader';
 import Script from 'next/script'
 import Link from 'next/link'
 
 
 
-
-
 export default function Call_scripts() {
   return (
-
     <>
-    
       {/* NAVIGATION BAR */}
-      <div className={styles.csnavbar}>
-      <div className={styles.dropdown}>
-          <Link  href="#OPEN">MENU</Link>
-          <div className={styles.dropdown_content}>
-              <Link href="/">Home Page</Link>
-              <Link href="/products">Products</Link>
-              <Link href="#">Processes</Link>
-              <Link href="/future_feature">Future Thingz</Link>
-          </div>
-      </div>
-      <div className={styles.dropdown}>
-          <Link  href="#OPEN">CALL-SCRIPTS</Link>
-          <div className={styles.dropdown_content}>
-              <Link href="/">SALES OutBound</Link>
-              <Link href="/products">SALES InBound</Link>
-          </div>
-      </div>
-        <Link href="#OPEN">CALL-OPEN</Link>
-        <Link href="#APPSTART">APPLICATION-START</Link>
-        <Link href="#APPOUTCOME">APPLICATION-OUTCOME</Link>
-        <Link href="#CLOSEOUT">CLOSE-OUT</Link>
-      </div>
+      <CallScriptHeader />
+      {/* NAVIGATION BAR  END*/}
+
       {/* CALL OPEN SECTION */} 
       <div id="OPEN"className={styles.open_section}>
-          <h1 className={styles.headline}>CALL-OPEN</h1>
+          <h1 className={styles.headline}>
+          <mark className={styles.mark}>CALL-OPEN</mark>
+          </h1>
+          </div>
           {/* *CARD CONATAINER* */}
           {/* <div className={styles.card_content_area}></div> */}
           <div className={styles.cards}>
               {/* *CARDS* */}
+
+
               <div className={styles.card}>
                   <h2>Introduction</h2>
                   <p>Good day, may I please speak to **Customer Name?<br />
@@ -197,13 +179,19 @@ export default function Call_scripts() {
                         <p />
                     </div>
               </div>
+
+
+
           </div>
-      </div>
+      
       {/* CALL OPEN SECTION END */}
 
       {/* APPLICATION START SECTION */}
       <div id="APPSTART" className={styles.open_section}>
-          <h1 className={styles.headline}>APPLICATION START</h1>
+          <h1 className={styles.headline}>
+          <mark className={styles.mark}>APPLICATION START</mark>
+          </h1>
+         </div>
           {/* *CARD CONATAINER* */}
           <div className={styles.card_content_area}>
           {/* *CARDS* */}
@@ -473,14 +461,17 @@ export default function Call_scripts() {
             {/* *CARDS END* */}
           </div>
           {/* *CARD CONATAINER END* */}
-      </div>
+      
 
 
       {/* APPLICATION START SECTION END */}
 
       {/* APPLICATION OUTCOME SECTION */}
       <div id="APPOUTCOME" className={styles.open_section}>
-          <h1 className={styles.headline}>APPLICATION OUTCOME</h1>
+          <h1 className={styles.headline}>
+          <mark className={styles.mark}>APPLICATION OUTCOME</mark>
+          </h1>
+          </div>
           {/* *CARD CONATAINER* */}
           <div className={styles.card_content_area}>
           {/* *CARDS* */}
@@ -622,12 +613,15 @@ export default function Call_scripts() {
             {/* *CARDS END* */}
           </div>
           {/* *CARD CONATAINER END* */}
-      </div>
+      
       {/* APPLICATION OUTCOME SECTION END */}
 
-            {/* APPLICATION OUTCOME SECTION */}
+      {/* APPLICATION OUTCOME SECTION */}
       <div id="CLOSEOUT" className={styles.open_section}>
-          <h1 className={styles.headline}>CLOSE-OUT PROTOCOL</h1>
+          <h1 className={styles.headline}>
+          <mark className={styles.mark}>CLOSE-OUT PROTOCOL</mark>
+          </h1>
+          </div>
           {/* *CARD CONATAINER* */}
           <div className={styles.card_content_area}>
           {/* *CARDS* */}
@@ -698,7 +692,7 @@ export default function Call_scripts() {
             {/* *CARDS END* */}
           </div>
           {/* *CARD CONATAINER END* */}
-      </div>
+      
       {/* APPLICATION OUTCOME SECTION END */}
       {/* <Footer />     */}
    </>

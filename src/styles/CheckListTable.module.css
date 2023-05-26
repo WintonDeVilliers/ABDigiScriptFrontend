@@ -1,0 +1,120 @@
+.open_section{
+  background-image: url("/bgstory.png");
+  /* background: rgba(36, 70, 175, 0.9); */
+/* background-size: 950px; */
+  display: grid;
+  grid-template-rows: 1fr auto;
+  padding-top: 96px;
+  padding-bottom: 6px;
+  overflow: hidden;
+}
+
+.headline{
+font-size: 52px;
+/* font-weight: 500; */
+font-weight: bolder;
+color: #d8d8d8;
+/* background-color: #13102D; */
+margin: 0;
+padding-top: 54px;
+padding-left: 24px;
+}
+
+.mark{
+  background-color: #13102D;
+  color:#d8d8d8;
+}
+
+
+.table {
+  display: flex;
+  /* flex-direction: column; */
+  border: 1px solid #000;
+}
+
+.row {
+  
+  /* flex: 1; */
+   /* display: flex; */
+  width: 100%;
+}
+
+.col1 {
+  flex-basis: 40%;
+}
+.col2 {
+  flex-basis: 10%;
+  background-color: #000;
+}
+
+.yellow_alert{
+  flex-basis: 10%;
+  background-color: rgb(242, 255, 124);
+}
+
+.red_alert{
+  text-align: center;
+  /* flex-basis: 20%; */
+  background-color: rgb(255, 112, 112);
+  border-style:groove;
+  border-width: 1px;
+
+}
+.orange_alert{
+  flex-basis: 10%;
+  background-color: rgb(255, 193, 78);
+}
+
+.col3 {
+  flex-basis: 40%;
+}
+
+.header {
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  width: 560px;
+  font-weight: bold;
+  background-color: #f0f0f0;
+}
+
+.cell {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #000;
+}
+
+.table_container{
+background-color: #13102D;
+background-size:650px;
+
+/* display: block; */
+
+padding-top: 24px;
+padding-left: 10px;
+padding-right: 10px;
+padding-bottom: 10px;
+
+}
+
+.table_backdrop{
+  /* display: flex; */
+  background-color: rgba(255, 255, 255, 0.7);
+  font-size: 17px;
+  padding: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+  /* width: fit-content; */
+  /* width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content; */
+  border-radius: 4px;
+  /* float: left; */
+  padding: 0 10px;
+  padding-bottom: 10px;
+  /* background-color: #566a83; */
+  transition: 0.2s;
+  /* font-size: large; */
+  /* flex: 10% 1; */
+  margin: 0.5%;
+}

@@ -16,7 +16,7 @@ export default function Call_scripts() {
       {/* CALL OPEN SECTION */} 
       <div id="OPEN"className={styles.open_section}>
           <h1 className={styles.headline}>
-          <mark className={styles.mark}>CALL-OPEN</mark>
+          <mark className={styles.mark}>INTRO</mark>
           </h1>
           </div>
           {/* *CARD CONATAINER* */}

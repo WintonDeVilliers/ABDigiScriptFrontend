@@ -1,5 +1,6 @@
 .header{
-    padding: 4px;
+    /* padding: 14px; */
+    padding: 14px;
     /* padding-left: 194px; */
     display: flex;
     align-items: center;
@@ -14,7 +15,7 @@
 
 .navigation_item{
   text-decoration: none;
-  color: #bdbdbd;
+  /* color: #bdbdbd; */
   margin-left: 5px;
 }
 

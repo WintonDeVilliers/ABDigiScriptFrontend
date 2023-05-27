@@ -8,6 +8,7 @@
   width: 100%; /* Full width */
   overflow: visible;
   font: 12px 'opensans-bold', sans-serif;
+  
   text-transform: uppercase;
   letter-spacing: 1.5px;
   margin: 0 auto;
@@ -20,21 +21,23 @@
 
 
 .csnav_img{
-    width: 100px;
-    height: 60px;
-    border-radius: 50%;
+    /* align-self: flex-end; */
+    border-radius: 9px;
     padding-bottom: 8px;
-    
+    /* width: 30px; */
+    /* height: 30px; */
+    padding-left: 650px;
 
 }
 
 /* Links inside the navbar */
 .csnavbar a {
-  float: left;
+  /* float: left; */
   display: block;
   color: #f2f2f2;
+  /* color: black; */
   text-align: center;
-  padding: 14px 16px;
+  padding: 14px 10px;
   text-decoration: none;
 }
 
@@ -42,6 +45,7 @@
 .csnavbar a:hover {
   background: #ddd;
   color: black;
+  border-radius: 12px;
 }
  
 .headline{
@@ -125,6 +129,7 @@ margin: 0.5%;
 .a{
   font-size: large;
   color: white;
+  /* margin-left: 100%; */
 }
 /* Style the button */
 
@@ -144,6 +149,13 @@ margin: 0.5%;
 /****************************************** responsive settings **********************/
 
 @media (max-width: 980px) {
+  .cards{
+    flex: 100%;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 380px) {
   .cards{
     flex: 100%;
     flex-direction: column;
@@ -248,19 +260,18 @@ display: block;
 
 
 /*#######################################################TOP NAV HOVER ###########################################*/
-.dropdown .dropbtn {
-  font-size: 16px;  
+.dropdown .dropbtn  {
   border: none;
   outline: none;
-  color: white;
-  padding: 14px 16px;
   background-color: inherit;
   font-family: inherit;
-  margin: 0;
+  border-top-right-radius: 12px;
 }
 
 .csnavbar a:hover, .dropdown:hover .dropbtn {
-  background-color:#ddd;
+  background-color:#c0bebe;
+  color: black;
+
 }
 
 .dropdown_content {
@@ -268,6 +279,8 @@ display: block;
   position:absolute;
   top: 50px;
   background-color: #f9f9f9;
+  border-radius: 12px;
+
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 2;

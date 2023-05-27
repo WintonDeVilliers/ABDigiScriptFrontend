@@ -3,28 +3,24 @@ import Link from 'next/link';
 
 export default function CheckListHeader() {
   return (
-    <>
-        <div className={styles.header}>
-         <img src="africanbank.svg" alt="Pichere" />
-        <nav className={styles.csnavbar}>
-              <div className={styles.dropdown}>
-          <Link  href="#OPEN">MENU</Link>
-          <div className={styles.dropdown_content}>
-              <Link href="/">Home Page</Link>
-              <Link href="/products">Products</Link>
-              <Link href="/knowyourstory">Know Your Story</Link>
-              {/* <Link href="/future_feature">Future Thingz</Link> */}
-          </div>
-          </div>
-          <a href="/call_scripts" className={styles.navigation_item} >CALL-SCRIPTS</a>
-          <a href="/products" className={styles.navigation_item} >PRODUCTS</a>
-          <a href="" className={styles.navigation_item} >NOTICE BOARD</a>   
-          {/* <a href="" className={styles.navigation_item} >MISC</a>    */}
-        </nav>
+  <div className={styles.csnavbar}>
+    <div className={styles.dropdown}>
+        {/* <div className={styles.dropbtn}>
+          <Link  href="#">HOME</Link>
         </div>
-    </>
-
-
-        
+        <div className={styles.dropdown_content}>
+            <Link href="/">Home Page</Link>
+            <Link href="/call_scripts">Call Scripts</Link>
+            <Link href="/checklist">Check-List</Link>
+            <Link href="/knowyourstory">Know Your Story</Link>
+        </div> */}
+    </div>
+      <Link href="/">HOME</Link>
+      <Link href="/call_scripts">SCRIPTS</Link>
+      <Link href="/products">PRODUCTS</Link>
+      <Link href="#">SUPPORT</Link>
+      <Link href="#">NOTICE-BOARD</Link>
+    <img className={styles.csnav_img} src="africanbank.svg" alt="Pichere" />
+</div>        
   )
 }

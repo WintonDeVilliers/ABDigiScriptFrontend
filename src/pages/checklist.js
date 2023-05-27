@@ -24,23 +24,19 @@ export default function Checklist() {
               <div className={styles.header}> <h4>Alert Level</h4></div>
               <div className={styles.header}> <h4>Attempt Rating</h4></div>
             </div>
-            {/* ROWS */}
               <div className={styles.table}>
-                <div className={styles.row}>
-                {/* COLUMNS */}
+                {/* <div className={styles.row}>
                   <div className={styles.col1}>we put regulatory statement here we put regulatory statement here we put here we put regulatory statement here</div>
 
                </div>
 
                 <div className={styles.row}>
-                {/* COLUMNS */}
                   <div className={styles.red_alert}><h6>RED ALERT</h6></div>
                </div>
 
                 <div className={styles.row}>
-                {/* COLUMNS */}
                   <div className={styles.col3}>we put regulatory statement here we put regfsddfsddfssfdsfsdfsdfdssulatory statement here we put here we put regulatory statement here</div>
-               </div>
+               </div> */}
              </div>
             {/* <div className={styles.table}>
                 <div className={styles.row}> */}

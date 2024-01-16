@@ -13,7 +13,14 @@
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
     "next": "13.1.6",
+    "npm": "^10.2.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-markdown": "^8.0.7",
+    "react-modal": "^3.16.1",
+    "strapi-sdk-js": "^2.2.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
   }
 }

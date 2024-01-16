@@ -1,42 +1,59 @@
-import Footer from "@/components/Footer"
-import styles from '../styles/Home.module.css'
-import Header from "@/components/HomePageHeader"
-import HomePageHeader from "@/components/HomePageHeader"
+import Footer from "@/components/Footer";
+import React from "react";
+import styles from "../styles/Home.module.css";
+import HomePageHeader from "@/components/HomePageHeader";
+import ReactMarkdown from "react-markdown";
+import nbstyles from "../styles/NoticeBoard.module.css";
 
+export const getServerSideProps = async () => {
+  const res = await fetch(process.env.NEXT_PUBLIC_URL_NOTICEBOARD);
+  const data = await res.json();
+  console.log(data);
+  return { props: { sc_one_contents: data.data } };
+};
 
-export default function Home() {
+export default function Home({ sc_one_contents }) {
+  if (!sc_one_contents || !Array.isArray(sc_one_contents))
+    return <div>Loading...</div>;
+
+  // Extract keys dynamically based on the first item in the array
+  const keys = Object.keys(sc_one_contents[0].attributes.NoticeBoardJSON);
+
   return (
     <>
-     
-     <div className={styles.container}>
-          <HomePageHeader />
-      <div className={styles.main}>
-                  <div className={styles.main_img}>
-      <img src="/ab.png" alt="pic here" />
-      </div>
-      <div className={styles.main_content}>
-      
-       <h1 className={styles.headline}>Audacity to Believe</h1>
-          <h4 className={styles.headline_2}>Where we come from...</h4>
-          <div>
-            <p className={styles.second_description}>
-              “You cannot take away that the bank was founded in the context of 1964 when it was not even possible to think of an idea like this, 
-              never mind the challenge of raising the money.
-              But they had an audacious spirit and the audacity to believe.."
-            </p>
+      <div className={styles.container}>
+        <HomePageHeader />
+        <div className={styles.main}>
+          <div className={styles.main_content}>
+            <h1 className={styles.headline}>Notice Board</h1>
+            <div className={nbstyles.table_container}>
+              <table className={nbstyles.table}>
+                <thead>
+                  <tr>
+                    <th scope="col">Topic</th>
+                    <th scope="col">Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {sc_one_contents.map((item, rowIndex) => (
+                    <React.Fragment key={rowIndex}>
+                      {keys.map((key, columnIndex) => (
+                        <tr key={`${rowIndex}-${key}`}>
+                          <td className={nbstyles.topic}>{key}</td>
+                          <td style={{ whiteSpace: "pre-line" }}>
+                            {item.attributes.NoticeBoardJSON[key] || ""}
+                          </td>
+                        </tr>
+                      ))}
+                    </React.Fragment>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            {/* TABLE CONTAINER END */}
           </div>
-          <h4 className={styles.headline_2}>Digital Call Script</h4>
-          <div>
-            <p className={styles.second_description}>
-              The Proposed project aims to digitize sales call flow scripts to improve both agent and 
-            	customer experience during client onboarding process.
-            </p>
-          </div>
-      </div>
         </div>
-      <Footer />
       </div>
-
     </>
-  )
+  );
 }

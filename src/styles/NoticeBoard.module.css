@@ -1,0 +1,78 @@
+.table_section {
+  background-color: #13102d;
+  padding-top: 24px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  overflow-x: auto;
+}
+
+.table {
+  /* width: 100%; */
+  /* border-collapse: collapse; */
+  border: none;
+  width: 1360px;
+}
+
+@media (max-width: 1250px) {
+  .table {
+    /* width: 100%; */
+    /* border-collapse: collapse; */
+    border: none;
+    width: 100%;
+  }
+}
+
+.table th,
+.table td {
+  padding: 20px;
+  text-align: left;
+}
+
+.table th {
+  background: #002b60;
+  color: white;
+  text-align: center;
+  /* border-radius: 8px; */
+}
+
+.table tr {
+  background-color: #002b60;
+  color: rgb(226, 224, 224);
+  font-size: large;
+  /* border-radius: 8px; */
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #003582; /* Lighter shade for even rows */
+}
+
+/* Additional shades for better complementary hues */
+.table tbody tr:nth-child(odd) {
+  background-color: #001e3e; /* Slightly darker shade for odd rows */
+}
+
+.table tbody tr:hover {
+  background-color: #0260f7; /* Darker shade on hover for better contrast */
+}
+.table .statement {
+  background-color: #3b84c8;
+  color: rgb(226, 224, 224);
+  font-size: large;
+  border-radius: 8px;
+  /* max-width: 100%; */
+  /* text-align: center; */
+}
+
+.table .topic {
+  background-color: #003582;
+  color: whitesmoke;
+  font-weight: bold;
+  /* border-radius: 8px; */
+  text-align: center;
+}
+
+.table_container {
+  overflow-x: auto;
+  /* background-color: black; */
+}

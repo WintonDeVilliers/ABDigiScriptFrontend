@@ -3,130 +3,150 @@
   padding: 20px;
   overflow: hidden;
   background: #002b60;
-  position: fixed; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
-  width: 100%; /* Full width */
+  position: fixed;
+  top: 0;
+  width: 100%;
   overflow: visible;
-  font: 12px 'opensans-bold', sans-serif;
-  
+  font: 12px "opensans-bold", sans-serif;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   margin: 0 auto;
   z-index: 100;
-  position: fixed;
   left: 0;
 }
 
-
-
-
-.csnav_img{
-    /* align-self: flex-end; */
-    border-radius: 9px;
-    padding-bottom: 8px;
-    /* width: 30px; */
-    /* height: 30px; */
-    padding-left: 650px;
-
+.csnav_img {
+  position: fixed;
+  top: 20px;
+  right: 20px; /* Adjust the right value as needed */
 }
 
-/* Links inside the navbar */
 .csnavbar a {
-  /* float: left; */
   display: block;
   color: #f2f2f2;
-  /* color: black; */
   text-align: center;
-  padding: 14px 10px;
+  padding: 14px 6px;
   text-decoration: none;
 }
 
-/* Change background on mouse-over */
 .csnavbar a:hover {
   background: #ddd;
   color: black;
   border-radius: 12px;
 }
- 
-.headline{
-font-size: 52px;
-/* font-weight: 500; */
-font-weight: bolder;
-color: #d8d8d8;
-/* background-color: #13102D; */
-margin: 0;
-padding-top: 54px;
-padding-left: 24px;
+
+@media screen and (min-width: 768px) {
+  .csnavbar {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .csnav_img {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin-top: 20px;
+    margin-right: 20px;
+  }
+}
+@media (max-width: 780px) {
+  .csnav_img {
+    display: none;
+  }
 }
 
-.mark{
-  background-color: #13102D;
-  color:#d8d8d8;
+.headline {
+  font-size: 52px;
+  /* font-weight: 500; */
+  font-weight: bolder;
+  color: #d8d8d8;
+
+  /* background-color: #13102D; */
+  margin: 0;
+  padding-top: 54px;
+  padding-left: 24px;
+}
+
+.mark {
+  background-color: transparent;
+  color: #c7c7c7;
+  text-shadow: 2px 2px #13102d;
 }
 /* Main content */
 .csmain {
   margin-top: 100px; /* Add a top margin to avoid content overlay */
 }
 
-.open_section{
-  background-image: url("/bgstory.png");
-   /* background: rgba(36, 70, 175, 0.9); */
-  /* background-size: 950px; */
-    display: grid;
-    grid-template-rows: 1fr auto;
-    padding-top: 96px;
-    padding-bottom: 6px;
-    overflow: hidden;
-}
+.open_section {
+  /* background-image: url("/bgtexr.jpg"); */
 
+  /* background: rgba(36, 70, 175, 0.9); */
+  background-size: 1950px;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  padding-top: 96px;
+  padding-bottom: 6px;
+  overflow: hidden;
+}
 
 .cards {
-background-color: #13102D;
-background-size:650px;
+  /* background-color: #002b60; */
+  background-image: url("/bgtexr.jpg");
+  background-size: cover;
 
-display: flex;
-flex-wrap: wrap;
-flex-grow: 1;
-flex-wrap: wrap;
-flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  flex-direction: row;
 
-padding-top: 24px;
-padding-left: 10px;
-padding-right: 10px;
-padding-bottom: 10px;
+  padding-top: 24px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
 }
-
-
-
-
 
 .card {
-/* font-size: 17px; */
-padding: 15px;
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3); 
-width: fit-content;
-height: fit-content;
-border-radius: 4px;
-float: left;
-padding: 0 10px;
-background-color: #566a83;
-transition: 0.2s;
-font-size: large;
-flex: 10%;
-margin: 0.5%;
+  /* font-size: 17px; */
+  padding: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+  width: fit-content;
+  height: fit-content;
+  border-radius: 4px;
+  float: left;
+  padding: 0 10px;
+  /* background-color: #abc6f2; */
+  background-color: #002b4d;
+  color: whitesmoke;
+  text-align: center;
+
+  transition: 0.2s;
+  font-size: large;
+  flex: 10%;
+  margin: 0.5%;
 }
 
-.card:hover{
-  background-color: #33959E;
-  color: white;
+.card:hover {
+  background-color: #f1f1e6;
+  color: whitesmoke;
+  /* color: #000000; */
+
+  background-image: radial-gradient(
+    circle,
+    #002b4d,
+    #00335b,
+    #003b69,
+    #004377,
+    #004b86
+  );
 }
 
-
-.p{
+.p {
   font-size: large;
 }
 
-.a{
+.a {
   font-size: large;
   color: white;
   /* margin-left: 100%; */
@@ -135,132 +155,266 @@ margin: 0.5%;
 
 /* Style the tooltip text */
 
-
-
-.flxbtngroup{
+.flxbtngroup {
   display: flex;
   /* flex-direction: column; */
-  align-items:flex-start;
+  align-items: flex-start;
   /* padding-left: 47px; */
 }
 
-
-
 /****************************************** responsive settings **********************/
 
-@media (max-width: 980px) {
-  .cards{
+@media (max-width: 1250px) {
+  .cards {
     flex: 100%;
     flex-direction: column;
   }
 }
 
-@media (max-width: 380px) {
+/* @media (max-width: 380px) {
   .cards{
     flex: 100%;
     flex-direction: column;
   }
-}
+} */
 
 /*#######################################################NEW HOVER SETTINGS ###########################################*/
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Create 3 equal columns */
+  grid-template-rows: repeat(5, 1fr); /* Create 9 equal rows */
+  grid-gap: 2px; /* Add a 5px gap between buttons */
+}
 
+.modal_btn {
+  width: 35%;
+  height: 35px;
+  background: #ffc546;
+  color: #000000;
+  border: solid 2px #100e0e;
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: 0 0 3px black;
+  transition: 0.5s;
+}
+
+.modal_btn:hover {
+  /* background-color: #dfe0df; */
+  /* color: black; */
+  color: rgb(255, 255, 255);
+  border: solid 2px #fefdfd;
+  box-shadow: 0 0 3px #fefdfd;
+
+  background-image: radial-gradient(
+    circle,
+    #002b4d,
+    #29576c,
+    #628488,
+    #a1b1ad,
+    #dfe0df
+  );
+  /* background-image: radial-gradient(
+    circle,
+    #ffc546,
+    #e4d46f,
+    #d3dd9a,
+    #d0e1c1,
+    #dfe0df
+  ); */
+}
+
+.modal_container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgb(0, 0, 0, 0.2);
+}
+
+.modal {
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 100px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* animation */
+  animation-name: animatemodal;
+  animation-duration: 0.4s;
+}
 .wrapper {
-/* text-transform: uppercase; */
-background: #E5C388;
-color: #555;
- border-radius: 6px;
-cursor: help;
-font-family: "Gill Sans", Impact, sans-serif;
-font-size: 13px;
-padding: 5px 10px;
-margin: 0.1%;
-/* position: relative; */
-text-align: center;
-width: fit-content;
--webkit-transform:translateZ(0);
--webkit-font-smoothing:antialiased; /* webkit text rendering fix */
+  /* text-transform: uppercase; */
+  background: #e5c388;
+  color: #555;
+  border-radius: 6px;
+  /* cursor:pointer; */
+  font-family: "Gill Sans", Impact, sans-serif;
+  font-size: 13px;
+  padding: 5px 10px;
+  margin: 0.1%;
+  /* position: relative; */
+  text-align: center;
+  width: fit-content;
+  transform: translateZ(0);
+  /* webkit text rendering fix */
 }
 
 .wrapper .tooltip {
-background: #1496bb;
-bottom: 100%;
-color: #f4f1f1;
-font-size: 15px;
-font-weight:600;
-display: block;
-left: -20px;
-margin-bottom: 15px;
-opacity: 0;
-padding: 20px;
-pointer-events: none;
-/* IN CARD HOV */
-position: absolute;
-width: max-content;
--webkit-transform: translateY(10px);
-  -moz-transform: translateY(10px);
-  -ms-transform: translateY(10px);
-   -o-transform: translateY(10px);
-    transform: translateY(10px);
--webkit-transition: all .25s ease-out;
-  -moz-transition: all .25s ease-out;
-  -ms-transition: all .25s ease-out;
-   -o-transition: all .25s ease-out;
-    transition: all .25s ease-out;
--webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
-  -moz-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
-  -ms-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
-   -o-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+  background: #1496bb;
+  bottom: 100%;
+  /* color: #f4f1f1; */
+  color: #13102d;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  opacity: 0;
+  padding: 20px;
+  display: block;
+  pointer-events: none;
+  position: absolute;
+  width: 380px;
+  /* width:fit-content; */
+  transform: translateY(60px);
+  transition: all 0.25s ease-out;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+}
+
+.img_tooltip {
+  /* background: #1496bb; */
+  bottom: 100%;
+  /* color: #f4f1f1; */
+  color: #13102d;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  opacity: 0;
+  padding: 20px;
+  display: block;
+  pointer-events: none;
+  position: absolute;
+  width: 400px;
+  /* width:fit-content; */
+  transform: translateY(60px);
+  transition: all 0.25s ease-out;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+}
+
+.wrapper:nth-child(4n + 1) .tooltip {
+  left: -15%; /* For first column */
+}
+
+.wrapper:nth-child(4n + 2) .tooltip {
+  right: -280%; /* For second column */
+}
+
+.wrapper:nth-child(4n + 3) .tooltip {
+  left: -258%; /* For third column */
+}
+
+.wrapper:nth-child(4n) .tooltip {
+  right: -22%; /* For last/fourth column */
 }
 
 /* This bridges the gap so you can mouse into the tooltip without it disappearing */
 
-.wrapper .tooltip:before {
-bottom: -20px;
-content: " ";
-display: block;
-height: 20px;
-left: 0;
-position: absolute;
-width: 100%;
-}
-
-/* CSS Triangles - see Trevor's post */
-.wrapper .tooltip:after {
-border-left: solid transparent 10px;
-border-right: solid transparent 10px;
-border-top: solid #1496bb 10px;
-bottom: -10px;
-content: " ";
-height: 0;
-left: 50%;
-margin-left: -13px;
-position: absolute;
-width: 0;
-}
-
 .wrapper:hover .tooltip {
-opacity: 1;
-pointer-events: auto;
--webkit-transform: translateY(0px);
-  -moz-transform: translateY(0px);
-  -ms-transform: translateY(0px);
-   -o-transform: translateY(0px);
-    transform: translateY(0px);
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0px);
 }
 
 /* IE can just show/hide with no transition */
 .wrapper .tooltip {
-display: none;
+  display: none;
 }
 
 .wrapper:hover .tooltip {
-display: block;
+  display: block;
 }
 
+/* ##########################################################IMAGE TOOLTIP AND WRAPPER ##########################################################*/
+.img_wrapper {
+  /* text-transform: uppercase; */
+  background: #e5c388;
+  color: #555;
+  border-radius: 6px;
+  /* cursor:pointer; */
+  font-family: "Gill Sans", Impact, sans-serif;
+  font-size: 13px;
+  padding: 5px 10px;
+  margin: 0.1%;
+  /* position: relative; */
+  text-align: center;
+  width: fit-content;
+  transform: translateZ(0);
+  /* webkit text rendering fix */
+}
 
+.img_wrapper .img_tooltip {
+  /* background: #1496bb; */
+  bottom: 100%;
+  /* color: #f4f1f1; */
+  color: #13102d;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  opacity: 0;
+  padding: 20px;
+  display: block;
+  pointer-events: none;
+  position: absolute;
+  width: 400px;
+  /* width:fit-content; */
+  transform: translateY(60px);
+  transition: all 0.25s ease-out;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+}
+
+.img_wrapper:nth-child(4n + 1) .img_tooltip {
+  left: -15%; /* For first column */
+}
+
+.img_wrapper:nth-child(4n + 2) .img_tooltip {
+  right: -280%; /* For second column */
+}
+
+.img_wrapper:nth-child(4n + 3) .img_tooltip {
+  left: -258%; /* For third column */
+}
+
+.img_wrapper:nth-child(4n) .img_tooltip {
+  right: -22%; /* For last/fourth column */
+}
+
+/* This bridges the gap so you can mouse into the tooltip without it disappearing */
+
+.img_wrapper:hover .img_tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0px);
+}
+
+/* IE can just show/hide with no transition */
+.img_wrapper .img_tooltip {
+  display: none;
+}
+
+.img_wrapper:hover .img_tooltip {
+  display: block;
+}
 /*#######################################################TOP NAV HOVER ###########################################*/
-.dropdown .dropbtn  {
+.dropdown .dropbtn {
   border: none;
   outline: none;
   background-color: inherit;
@@ -268,21 +422,21 @@ display: block;
   border-top-right-radius: 12px;
 }
 
-.csnavbar a:hover, .dropdown:hover .dropbtn {
-  background-color:#c0bebe;
+.csnavbar a:hover,
+.dropdown:hover .dropbtn {
+  background-color: #c0bebe;
   color: black;
-
 }
 
 .dropdown_content {
   display: none;
-  position:absolute;
+  position: absolute;
   top: 50px;
   background-color: #f9f9f9;
   border-radius: 12px;
 
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 2;
 }
 
@@ -296,11 +450,10 @@ display: block;
 }
 
 .dropdown_content a:hover {
-  background-color: #1496bb ;
+  background-color: #0260f7;
   color: #ddd;
 }
 
 .dropdown:hover .dropdown_content {
   display: block;
 }
-

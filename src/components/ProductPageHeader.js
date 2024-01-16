@@ -18,8 +18,8 @@ export default function ProductPageHeader() {
         </div>
         <Link href="#LOANS">LOANS</Link>
         <Link href="#CREDITCARD">Credit-Card</Link>
+        <Link href="#FUNERAL">Funeral</Link>
         <Link href="#TECHDEALS">Tech Deals</Link>
-        <Link href="#TECHDEALS">Funeral</Link>
         <img className={styles.csnav_img} src="africanbank.svg" alt="Pichere" />
     </div>
   )

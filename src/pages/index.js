@@ -5,19 +5,20 @@ import HomePageHeader from "@/components/HomePageHeader";
 import ReactMarkdown from "react-markdown";
 import nbstyles from "../styles/NoticeBoard.module.css";
 
+/*  getServerSideProps: func will await response from strapi CRM */
 export const getServerSideProps = async () => {
   const res = await fetch(process.env.NEXT_PUBLIC_URL_NOTICEBOARD);
   const data = await res.json();
   console.log(data);
-  return { props: { sc_one_contents: data.data } };
+  return { props: { strapi_res_data: data.data } };
 };
 
-export default function Home({ sc_one_contents }) {
-  if (!sc_one_contents || !Array.isArray(sc_one_contents))
+export default function Home({ strapi_res_data }) {
+  if (!strapi_res_data || !Array.isArray(strapi_res_data))
     return <div>Loading...</div>;
 
-  // Extract keys dynamically based on the first item in the array
-  const keys = Object.keys(sc_one_contents[0].attributes.NoticeBoardJSON);
+  // Extracting keys dynamically based on the first item in the array to allow for arbitrary number of table content in Strapi
+  const keys = Object.keys(strapi_res_data[0].attributes.NoticeBoardJSON);
 
   return (
     <>
@@ -35,7 +36,7 @@ export default function Home({ sc_one_contents }) {
                   </tr>
                 </thead>
                 <tbody>
-                  {sc_one_contents.map((item, rowIndex) => (
+                  {strapi_res_data.map((item, rowIndex) => (
                     <React.Fragment key={rowIndex}>
                       {keys.map((key, columnIndex) => (
                         <tr key={`${rowIndex}-${key}`}>

@@ -45,6 +45,8 @@ export default function Call_scripts({ sc_one_contents }) {
     useState(false);
   const [isApplicationDeclineModalOpen, setIsApplicationDeclineModalOpen] =
     useState(false);
+  const [isPresentOffersModalOpen, setIsPresentOffersModalOpen] =
+    useState(false);
   const [isCreditLifeFaqModalOpen, setIsCreditLifeFaqModalOpen] =
     useState(false);
   const [isTechCreditModalOpen, setIsTechCreditModalOpen] = useState(false);
@@ -154,6 +156,13 @@ export default function Call_scripts({ sc_one_contents }) {
   const closeApplicationDeclineModal = () => {
     setIsApplicationDeclineModalOpen(false);
   };
+  const openPresentOffersModal = () => {
+    setIsPresentOffersModalOpen(true);
+  };
+
+  const closePresentOffersModal = () => {
+    setIsPresentOffersModalOpen(false);
+  };
   const openCreditLifeFaqModal = () => {
     setIsCreditLifeFaqModalOpen(true);
   };
@@ -218,20 +227,28 @@ export default function Call_scripts({ sc_one_contents }) {
                   </ReactMarkdown>
                   {/*FREQUENT OBJECTION BUTTON(s)*/}
                   {/* MODAL */}
-                  <div>
-                    <button onClick={openObjectionModal}>Open Modal</button>
-                    <CustomModal
-                      isOpen={isObjectionModalOpen}
-                      onRequestClose={closeObjectionModal}
-                      contentLabel="Modal 2"
-                    >
-                      <h2>Objection Modal</h2>
-                    </CustomModal>
-                  </div>
+                  <button
+                    className={styles.modal_btn}
+                    onClick={openObjectionModal}
+                  >
+                    Open Modal
+                  </button>
+                  <CustomModal
+                    isOpen={isObjectionModalOpen}
+                    onRequestClose={closeObjectionModal}
+                    contentLabel="Modal 2"
+                  >
+                    <ReactMarkdown>
+                      {sc_one_content.attributes.NotInterested}
+                    </ReactMarkdown>
+                    <ReactMarkdown>
+                      {sc_one_content.attributes.AlreadyHaveALoan}
+                    </ReactMarkdown>
+                  </CustomModal>
                   {/* MODAL */}
 
                   <br />
-                  <div>
+                  {/* <div>
                     <button className={styles.wrapper}>
                       <ReactMarkdown>
                         {sc_one_content.attributes.AlreadyHaveALoan}
@@ -244,7 +261,7 @@ export default function Call_scripts({ sc_one_contents }) {
                         </span>
                       </div>
                     </button>
-                  </div>
+                  </div> */}
 
                   {/*FREQUENT OBJECTION BUTTON(s) END*/}
                   {/* FEATURES AND BENEFITS */}
@@ -302,39 +319,78 @@ export default function Call_scripts({ sc_one_contents }) {
                   {sc_one_content.attributes.IdentificationAndVerification}
                 </ReactMarkdown>
                 <div>
-                  <button className={styles.img_wrapper}>
+                  <button
+                    className={styles.modal_btn}
+                    onClick={openForeignNationalModal}
+                  >
                     FOREIGN NATIONAL
-                    <div className={styles.img_tooltip}>
-                      <Image
-                        src={foreignNational}
-                        alt="Ask aobut Permit expiration"
-                        width={500}
-                        height={350}
-                      />
-                    </div>
                   </button>
+                  <CustomModal
+                    isOpen={isForeignNationalModalOpen}
+                    onRequestClose={closeForeignNationalModal}
+                    contentLabel="label"
+                  >
+                    <h2>FOREIGN NATIONAL</h2>
+                    <Image
+                      src={foreignNational}
+                      alt="Ask aobut Permit expiration"
+                      className={styles.img_InModal}
+                      // width={400}
+                      // height={350}
+                    />
+                  </CustomModal>
                 </div>
                 <br />
                 <div>
-                  <button className={styles.wrapper}>
+                  <button
+                    className={styles.modal_btn}
+                    onClick={openRefusingIDVProcessModal}
+                  >
+                    REFUSING ID & V
+                  </button>
+                  <CustomModal
+                    isOpen={isRefusingIDVProcessModalOpen}
+                    onRequestClose={closeRefusingIDVProcesModal}
+                    contentLabel="label"
+                  >
+                    <ReactMarkdown>
+                      {sc_one_content.attributes.REFUSINGPROCESSING}
+                    </ReactMarkdown>
+                  </CustomModal>
+                  {/* <button className={styles.wrapper}>
                     REFUSING ID&V PROCESSING
                     <div className={styles.tooltip}>
                       <ReactMarkdown>
                         {sc_one_content.attributes.REFUSINGPROCESSING}
                       </ReactMarkdown>
                     </div>
-                  </button>
+                  </button> */}
                 </div>
                 <br />
                 <div>
-                  <button className={styles.wrapper}>
+                  <button
+                    className={styles.modal_btn}
+                    onClick={openIDVAuthNotificatioModal}
+                  >
+                    ID & V NOTIFICATION
+                  </button>
+                  <CustomModal
+                    isOpen={isIDVAuthNotificationModalOpen}
+                    onRequestClose={closeIDVAuthNotificatioModal}
+                    contentLabel="label"
+                  >
+                    <ReactMarkdown>
+                      {sc_one_content.attributes.POPUPNOTRECEIVED}
+                    </ReactMarkdown>
+                  </CustomModal>
+                  {/* <button className={styles.wrapper}>
                     POP-UP NOTIFICATION NOT RECIEVED
                     <div className={styles.tooltip}>
                       <ReactMarkdown>
                         {sc_one_content.attributes.POPUPNOTRECEIVED}
                       </ReactMarkdown>
                     </div>
-                  </button>
+                  </button> */}
                 </div>
 
                 <ReactMarkdown>
@@ -344,16 +400,21 @@ export default function Call_scripts({ sc_one_contents }) {
                   {sc_one_content.attributes.ConsentToProcessInfo}
                 </ReactMarkdown>
                 <div>
-                  <button className={styles.wrapper}>
-                    REFUSING INFO SHARING
-                    <div className={styles.tooltip}>
-                      <span>
-                        <ReactMarkdown>
-                          {sc_one_content.attributes.REFUSINGINFOSHARING}
-                        </ReactMarkdown>
-                      </span>
-                    </div>
+                  <button
+                    className={styles.modal_btn}
+                    onClick={openRefusingInfoSharingModal}
+                  >
+                    REFUSING INFO PROCESSING
                   </button>
+                  <CustomModal
+                    isOpen={isRefusingInfoSharingModalOpen}
+                    onRequestClose={closeRefusingInfoSharingModal}
+                    contentLabel="lable"
+                  >
+                    <ReactMarkdown>
+                      {sc_one_content.attributes.REFUSINGINFOSHARING}
+                    </ReactMarkdown>
+                  </CustomModal>
                 </div>
                 <br />
               </div>
@@ -364,7 +425,22 @@ export default function Call_scripts({ sc_one_contents }) {
                 </ReactMarkdown>
                 {/* *COMPLIANCE BUTTON GROUP * */}
                 <div>
-                  <button className={styles.wrapper}>
+                  <button
+                    className={styles.modal_btn}
+                    onClick={openPreQualificationModal}
+                  >
+                    PRE-QUALIFICATION QUESTIONS
+                  </button>
+                  <CustomModal
+                    isOpen={isPreQualificationModalOpen}
+                    onRequestClose={closePreQualificationModal}
+                    contentLabel="Pre-qual"
+                  >
+                    <ReactMarkdown>
+                      {sc_one_content.attributes.PREQUALNOTMET}
+                    </ReactMarkdown>
+                  </CustomModal>
+                  {/* <button className={styles.wrapper}>
                     PRE-QUALIFICATION NOT MET
                     <div className={styles.tooltip}>
                       <span>
@@ -373,48 +449,50 @@ export default function Call_scripts({ sc_one_contents }) {
                         </ReactMarkdown>
                       </span>
                     </div>
-                  </button>
+                  </button> */}
                 </div>
                 <br />
                 <div>
-                  <button className={styles.wrapper}>
-                    COMPLIANCE FAQ's
-                    <div className={styles.tooltip}>
-                      <span>
-                        <ReactMarkdown>
-                          {sc_one_content.attributes.COMPLIANCEFAQS}
-                        </ReactMarkdown>
-                      </span>
-                    </div>
+                  <button
+                    className={styles.modal_btn}
+                    onClick={openComplianceFaqModal}
+                  >
+                    COMPLIANCE FAQ(s)
                   </button>
+                  <CustomModal
+                    isOpen={isComplianceFaqModalOpen}
+                    onRequestClose={closeComplianceFaqModal}
+                    contentLabel="label"
+                  >
+                    <ReactMarkdown>
+                      {sc_one_content.attributes.COMPLIANCEFAQS}
+                    </ReactMarkdown>
+                    <ReactMarkdown>
+                      {sc_one_content.attributes.CUSTOMERDECLINECREDITCHECK}
+                    </ReactMarkdown>
+                  </CustomModal>
                 </div>
                 <br />
-                <div>
-                  <button className={styles.wrapper}>
-                    CUSTOMER DECLINE CREDIT CHECK(S)
-                    <div className={styles.tooltip}>
-                      <span>
-                        <ReactMarkdown>
-                          {sc_one_content.attributes.CUSTOMERDECLINECREDITCHECK}
-                        </ReactMarkdown>
-                      </span>
-                    </div>
-                  </button>
-                </div>
+                <div></div>
                 <ReactMarkdown>
                   {sc_one_content.attributes.BankingDetails}
                 </ReactMarkdown>
                 <div>
-                  <button className={styles.wrapper}>
-                    BANKING DETAILS FAQ's
-                    <div className={styles.tooltip}>
-                      <span>
-                        <ReactMarkdown>
-                          {sc_one_content.attributes.BANKINGDETAILSFAQS}
-                        </ReactMarkdown>
-                      </span>
-                    </div>
+                  <button
+                    className={styles.modal_btn}
+                    onClick={openBankingDetailsFaqModal}
+                  >
+                    BANKING DETAILS FAQ(s)
                   </button>
+                  <CustomModal
+                    isOpen={isBankingDetailsFaqModalOpen}
+                    onRequestClose={closeBankingDetailsFaqModal}
+                    contentLabel="label"
+                  >
+                    <ReactMarkdown>
+                      {sc_one_content.attributes.BANKINGDETAILSFAQS}
+                    </ReactMarkdown>
+                  </CustomModal>
                 </div>
                 <ReactMarkdown>
                   {sc_one_content.attributes.BankStatements}
@@ -448,7 +526,22 @@ export default function Call_scripts({ sc_one_contents }) {
                 </ReactMarkdown>
 
                 <div>
-                  <button className={styles.wrapper}>
+                  <button
+                    className={styles.modal_btn}
+                    onClick={openPersalNumberFaqModal}
+                  >
+                    PERSAL WORKER
+                  </button>
+                  <CustomModal
+                    isOpen={isPersalNumberFaqModalOpen}
+                    onRequestClose={closePersalNumberFaqModal}
+                  >
+                    <ReactMarkdown>
+                      {sc_one_content.attributes.PERSALNUMBERS}
+                    </ReactMarkdown>
+                  </CustomModal>
+
+                  {/* <button className={styles.wrapper}>
                     PERSAL NUMBERS
                     <div className={styles.tooltip}>
                       <span>
@@ -457,11 +550,26 @@ export default function Call_scripts({ sc_one_contents }) {
                         </ReactMarkdown>
                       </span>
                     </div>
-                  </button>
+                  </button> */}
                 </div>
                 <br />
                 <div>
-                  <button className={styles.wrapper}>
+                  <button
+                    className={styles.modal_btn}
+                    onClick={openContractWorkerModal}
+                  >
+                    CONTRACT WORKER
+                  </button>
+                  <CustomModal
+                    isOpen={isContractWorkerModalOpen}
+                    onRequestClose={closeContractWorkerModal}
+                  >
+                    <ReactMarkdown>
+                      {sc_one_content.attributes.CONTRACTWORKERS}
+                    </ReactMarkdown>
+                  </CustomModal>
+
+                  {/* <button className={styles.wrapper}>
                     CONTRACT WORKERS
                     <div className={styles.tooltip}>
                       <span>
@@ -470,7 +578,7 @@ export default function Call_scripts({ sc_one_contents }) {
                         </ReactMarkdown>
                       </span>
                     </div>
-                  </button>
+                  </button> */}
                 </div>
                 <br />
               </div>
@@ -504,7 +612,22 @@ export default function Call_scripts({ sc_one_contents }) {
                   {sc_one_content.attributes.MyWorld}
                 </ReactMarkdown>
                 <div>
-                  <button className={styles.wrapper}>
+                  <button
+                    className={styles.modal_btn}
+                    onClick={openMyWorldBenefitModal}
+                  >
+                    MyWORLD BENEFITS
+                  </button>
+                  <CustomModal
+                    isOpen={isMyWorldBenefitsModalOpen}
+                    onRequestClose={closeMyWorldBenefitModal}
+                  >
+                    <ReactMarkdown>
+                      {sc_one_content.attributes.MyWorldBenefits}
+                    </ReactMarkdown>
+                  </CustomModal>
+
+                  {/* <button className={styles.wrapper}>
                     MyWorld Benefits
                     <div className={styles.tooltip}>
                       <span>
@@ -513,14 +636,28 @@ export default function Call_scripts({ sc_one_contents }) {
                         </ReactMarkdown>
                       </span>
                     </div>
-                  </button>
+                  </button> */}
                 </div>
                 <br />
                 <ReactMarkdown>
                   {sc_one_content.attributes.Rewards}
                 </ReactMarkdown>
                 <div>
-                  <button className={styles.wrapper}>
+                  <button
+                    className={styles.modal_btn}
+                    onClick={openRewardsModal}
+                  >
+                    REWARDS
+                  </button>
+                  <CustomModal
+                    isOpen={isRewardsModalOpen}
+                    onRequestClose={closeRewardsModal}
+                  >
+                    <ReactMarkdown>
+                      {sc_one_content.attributes.RewardsBenefits}
+                    </ReactMarkdown>
+                  </CustomModal>
+                  {/* <button className={styles.wrapper}>
                     Rewards Benefits
                     <div className={styles.tooltip}>
                       <span>
@@ -529,7 +666,7 @@ export default function Call_scripts({ sc_one_contents }) {
                         </ReactMarkdown>
                       </span>
                     </div>
-                  </button>
+                  </button> */}
                 </div>
                 <br />
 
@@ -537,7 +674,21 @@ export default function Call_scripts({ sc_one_contents }) {
                   {sc_one_content.attributes.Overdraft}
                 </ReactMarkdown>
                 <div>
-                  <button className={styles.wrapper}>
+                  <button
+                    className={styles.modal_btn}
+                    onClick={openOverdraftBenefitsModal}
+                  >
+                    OVERDRAFT BENEFITS
+                  </button>
+                  <CustomModal
+                    isOpen={isOverdraftBenefitsModalOpen}
+                    onRequestClose={closeOverdraftBenefitsModal}
+                  >
+                    <ReactMarkdown>
+                      {sc_one_content.attributes.OverdraftBenefits}
+                    </ReactMarkdown>
+                  </CustomModal>
+                  {/* <button className={styles.wrapper}>
                     Overdraft Benefits
                     <div className={styles.tooltip}>
                       <span>
@@ -546,7 +697,7 @@ export default function Call_scripts({ sc_one_contents }) {
                         </ReactMarkdown>
                       </span>
                     </div>
-                  </button>
+                  </button> */}
                 </div>
                 <br />
               </div>
@@ -556,16 +707,22 @@ export default function Call_scripts({ sc_one_contents }) {
                   {sc_one_content.attributes.ApplicationDecline}
                 </ReactMarkdown>
                 <div>
-                  <button className={styles.wrapper}>
-                    APPLICATION DECLINE REASONS
-                    <div className={styles.tooltip}>
-                      <span>
-                        <ReactMarkdown>
-                          {sc_one_content.attributes.ApplicationDeclineReasons}
-                        </ReactMarkdown>
-                      </span>
-                    </div>
+                  {/* <button onClick={openApplicationDeclineModal} */}
+                  <button
+                    className={styles.modal_btn}
+                    onClick={openApplicationDeclineModal}
+                  >
+                    APPLICATION DECLINE
                   </button>
+                  <CustomModal
+                    isOpen={isApplicationDeclineModalOpen}
+                    onRequestClose={closeApplicationDeclineModal}
+                    contentLabel="label"
+                  >
+                    <ReactMarkdown>
+                      {sc_one_content.attributes.ApplicationDeclineReasons}
+                    </ReactMarkdown>
+                  </CustomModal>
                 </div>
                 <ReactMarkdown>
                   {sc_one_content.attributes.CloseOutDecline}
@@ -578,17 +735,25 @@ export default function Call_scripts({ sc_one_contents }) {
                   {sc_one_content.attributes.ApplicationSuccessfulOutcome}
                 </ReactMarkdown>
                 <div>
-                  <button className={styles.img_wrapper}>
+                  {/* <button onClick={open} */}
+                  <button
+                    className={styles.modal_btn}
+                    onClick={openPresentOffersModal}
+                  >
                     PRESENT OFFERS
-                    <div className={styles.img_tooltip}>
-                      <Image
-                        src={presentOffers}
-                        alt="Present Offers on OMNI"
-                        width={500}
-                        height={350}
-                      />
-                    </div>
                   </button>
+                  <CustomModal
+                    isOpen={isPresentOffersModalOpen}
+                    onRequestClose={closePresentOffersModal}
+                    contentLabel="presentOffers"
+                  >
+                    <h2>Present Offers</h2>
+                    <Image
+                      src={presentOffers}
+                      alt="Ask Read All Offers as per OMNI"
+                      className={styles.img_InModal}
+                    />
+                  </CustomModal>
                 </div>
                 <ReactMarkdown>
                   {sc_one_content.attributes.DebiCheck}
@@ -597,64 +762,63 @@ export default function Call_scripts({ sc_one_contents }) {
                   {sc_one_content.attributes.CreditLifeCover}
                 </ReactMarkdown>
                 <div>
-                  <button className={styles.wrapper}>
+                  <button
+                    className={styles.modal_btn}
+                    onClick={openCreditLifeFaqModal}
+                  >
                     CREDIT LIFE FAQ's
-                    <div className={styles.tooltip}>
+                    {/* <div className={styles.tooltip}>
                       <span>
                         <ReactMarkdown>
                           {sc_one_content.attributes.CREDITLIFEFAQS}
                         </ReactMarkdown>
                       </span>
-                    </div>
+                    </div> */}
                   </button>
+                  <CustomModal
+                    isOpen={isCreditLifeFaqModalOpen}
+                    onRequestClose={closeCreditLifeFaqModal}
+                  >
+                    <h2>Credit Life</h2>
+                  </CustomModal>
                 </div>
                 <p />
-                {/* <div>
-                  <button className={styles.wrapper}>
-                    CREDIT LIFE COST
-                    <div className={styles.tooltip}>
-                      <span>
-                        <h5>CREDIT LIFE COST</h5>
-                        I am a ldLorem ipsum dolor sit amet,consectetur
-                        adipiscing elit.
-                        <br />
-                        Nunc convallis,nisl vel venenatis molestie,lectus ligula
-                        <br />
-                        imperdiet libero,in condimentum odio mauris sed metus.
-                        <br />
-                        Nunc pharetra tincidunt
-                        <br />
-                        ligula nec finibus. Pellentesque ut congue elit.
-                        Praesent aliquam
-                        <br />
-                        leo vitae dictum euismod.
-                      </span>
-                    </div>
-                  </button>
-                </div> */}
                 <ReactMarkdown>
                   {sc_one_content.attributes.TechCredit}
                 </ReactMarkdown>
                 <div>
-                  <button className={styles.wrapper}>
+                  <button
+                    className={styles.modal_btn}
+                    onClick={openTechCreditModal}
+                  >
                     TECH CREDIT
-                    <div className={styles.tooltip}>
-                      <ReactMarkdown>
-                        {sc_one_content.attributes.TechCreditBenefits}
-                      </ReactMarkdown>
-                    </div>
                   </button>
+                  <CustomModal
+                    isOpen={isTechCreditModalOpen}
+                    onRequestClose={closeTechCreditModal}
+                    contentLabel="techcredit"
+                  >
+                    <ReactMarkdown>
+                      {sc_one_content.attributes.TechCreditBenefits}
+                    </ReactMarkdown>
+                  </CustomModal>
                 </div>
                 <ReactMarkdown>{sc_one_content.attributes.NCR}</ReactMarkdown>
                 <div>
-                  <button className={styles.wrapper}>
+                  <button
+                    className={styles.modal_btn}
+                    onClick={openNCRLoanModal}
+                  >
                     NCR LOAN
-                    <div className={styles.tooltip}>
-                      <ReactMarkdown>
-                        {sc_one_content.attributes.NCRBenefits}
-                      </ReactMarkdown>
-                    </div>
                   </button>
+                  <CustomModal
+                    isOpen={isNCRLoanModalOpen}
+                    onRequestClose={closeNCRLoanModal}
+                  >
+                    <ReactMarkdown>
+                      {sc_one_content.attributes.NCRBenefits}
+                    </ReactMarkdown>
+                  </CustomModal>
                 </div>
                 <p />
               </div>

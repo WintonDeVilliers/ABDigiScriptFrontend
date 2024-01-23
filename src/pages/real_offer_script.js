@@ -27,9 +27,7 @@ export default function Real_Offer_Script({ sc_one_contents }) {
         <div key={sc_one_content.attributes.id}>
           <div id="OPEN" className={styles.open_section}>
             <h1 className={styles.headline}>
-              <mark className={styles.mark}>
-                INTRODUCTION & OFFER PRESENTATION
-              </mark>
+              <mark className={styles.mark}>OFFER PRESENTATION</mark>
             </h1>
           </div>
           <div className={styles.card_content_area}>

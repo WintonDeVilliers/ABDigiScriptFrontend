@@ -7,7 +7,8 @@ import ReactMarkdown from "react-markdown";
 import Image from "next/image";
 import foreignNational from "../../public/foreignNationalDocuments.png";
 import presentOffers from "../../public/presentOffers.png";
-import React from "react";
+import React, { useState } from "react";
+import CustomModal from "../components/CustomModal";
 
 export const getServerSideProps = async () => {
   const res = await fetch(process.env.NEXT_PUBLIC_URL_REAL_OFFER_SCRIPT);
@@ -18,6 +19,130 @@ export const getServerSideProps = async () => {
 };
 
 export default function Real_Offer_Script({ sc_one_contents }) {
+  const [isRFObjectionModalOpen, setIsRFObjectionModalOpen] = useState(false);
+  // const ID & V
+  const [isRefusingIDVProcessModalOpen, setIsRefusingIDVProcessingOpen] =
+    useState(false);
+  // const infoprocessing
+  const [isRefusingInfoProcessingOpen, setIsRefusingInfoProcessingOpen] =
+    useState(false);
+  const [isPresentOffersModalOpen, setIsPresentOffersModalOpen] =
+    useState(false);
+  const [isRefusingInfoSharingModalOpen, setIsRefusingInfoSharingModalOpen] =
+    useState(false);
+  //const entersekt
+  const [isIDVAuthNotificationModalOpen, setIsIDVAuthNotificationModalOpen] =
+    useState(false);
+  // const NCR , Overdraft, tech credit --> prod info
+  const [isTechCreditModalOpen, setIsTechCreditModalOpen] = useState(false);
+  const [isTechCreditProdSelectModalOpen, setIsTechCreditProdSelectModalOpen] =
+    useState(false);
+  const [isNCRLoanModalOpen, setIsNCRLoanModalOpen] = useState(false);
+  const [isOverdraftModalOpen, setIsOverdraftModalOpen] = useState(false);
+  // tech select screen shot
+  // const myworld
+  const [isMyWorldBenefitsOpen, setIsMyWorldBenefitsOpen] = useState(false);
+  // const rewards
+  const [isRewardsBenefitsOpen, setIsRewardsBenefitsOpen] = useState(false);
+
+  const [isDebiCheckModalOpen, setIsDebiCheckModalOpen] = useState(false);
+  // debicheck  -- wide modal to cater for loan and credit
+
+  // capturetips x3 screenshots (TBD QA sourcing)
+
+  const openRFObjectionModal = () => {
+    setIsRFObjectionModalOpen(true);
+  };
+
+  const closeRFObjectionModal = () => {
+    setIsRFObjectionModalOpen(false);
+  };
+  const openRefusingIDVProcessModal = () => {
+    setIsRefusingIDVProcessingOpen(true);
+  };
+
+  const closeRefusingIDVProcessModal = () => {
+    setIsRefusingIDVProcessingOpen(false);
+  };
+  const openRefusingInfoProcessingModal = () => {
+    setIsRefusingInfoProcessingOpen(true);
+  };
+  const closeRefusingInfoSharingModal = () => {
+    setIsRefusingInfoProcessingOpen(false);
+  };
+
+  const openPresentOffersModal = () => {
+    setIsPresentOffersModalOpen(true);
+  };
+
+  const closePresentOffersModal = () => {
+    setIsPresentOffersModalOpen(false);
+  };
+
+  const openIDVAuthNotificationModal = () => {
+    setIsIDVAuthNotificationModalOpen(true);
+  };
+  const closeIDVAuthNotificationModal = () => {
+    setIsIDVAuthNotificationModalOpen(false);
+  };
+  const openTechCreditModal = () => {
+    setIsTechCreditModalOpen(true);
+  };
+  const closeTechCreditModal = () => {
+    setIsTechCreditModalOpen(false);
+  };
+  const openTechCeditProductSelectModal = () => {
+    setIsTechCreditProdSelectModalOpen(true);
+  };
+  const closeTechCreditProductSelectModal = () => {
+    setIsTechCreditProdSelectModalOpen(false);
+  };
+
+  const openNCRLoanModal = () => {
+    setIsNCRLoanModalOpen(true);
+  };
+
+  const closeNCRLoanModal = () => {
+    setIsNCRLoanModalOpen(false);
+  };
+
+  const openOverdraftModal = () => {
+    setIsOverdraftModalOpen(true);
+  };
+
+  const closeOverdraftModal = () => {
+    setIsOverdraftModalOpen(false);
+  };
+
+  const openMyWorldBenefistsModal = () => {
+    setIsMyWorldBenefitsOpen(true);
+  };
+
+  const closeMyWorlBenefitsModal = () => {
+    setIsMyWorldBenefitsOpen(false);
+  };
+  const openRewardsBenefitsModal = () => {
+    setIsRewardsBenefitsOpen(true);
+  };
+
+  const closeRewardsBenefitsModal = () => {
+    setIsRewardsBenefitsOpen(false);
+  };
+  const openDebiCheckModal = () => {
+    setIsDebiCheckModalOpen(true);
+  };
+
+  const closeDebiCheckModal = () => {
+    setIsDebiCheckModalOpen(false);
+  };
+  // const  = () => {
+
+  // }
+
+  // const  = () => {
+
+  // }
+
   if (!sc_one_contents) return <div>Loading...</div>;
 
   return (
@@ -40,9 +165,23 @@ export default function Real_Offer_Script({ sc_one_contents }) {
                   <ReactMarkdown>
                     {sc_one_content.attributes.DigitalMigrationConversation}
                   </ReactMarkdown>
-                  <ReactMarkdown>
-                    {sc_one_content.attributes.PossibleObjections}
-                  </ReactMarkdown>
+                  <button
+                    className={styles.modal_btn}
+                    onClick={openRFObjectionModal}
+                  >
+                    POSSIBLE OBJECTIONS
+                  </button>
+                  <CustomModal
+                    isOpen={isRFObjectionModalOpen}
+                    onRequestClose={closeRFObjectionModal}
+                    contentLabel="objection_modal"
+                  >
+                    <ReactMarkdown>
+                      {sc_one_content.attributes.PossibleObjections}
+                    </ReactMarkdown>
+                  </CustomModal>
+                  <br />
+                  <p />
                 </div>
 
                 <div className={styles.card}>
@@ -52,6 +191,20 @@ export default function Real_Offer_Script({ sc_one_contents }) {
                   <ReactMarkdown>
                     {sc_one_content.attributes.IdAndVerification}
                   </ReactMarkdown>
+                  <button
+                    className={styles.modal_btn}
+                    onClick={openRefusingIDVProcessModal}
+                  >
+                    REFUSING ID & V
+                  </button>
+                  <CustomModal
+                    isOpen={isRefusingIDVProcessModalOpen}
+                    onRequestClose={closeRefusingIDVProcessModal}
+                    contentLabel="refusingIDV"
+                  >
+                    <h3>ID & V </h3>
+                  </CustomModal>
+
                   <ReactMarkdown>
                     {sc_one_content.attributes.Entersekt}
                   </ReactMarkdown>
@@ -72,17 +225,25 @@ export default function Real_Offer_Script({ sc_one_contents }) {
                     {sc_one_content.attributes.OffersDiscussion}
                   </ReactMarkdown>
                   <div>
-                    <button className={styles.img_wrapper}>
+                    <button
+                      className={styles.modal_btn}
+                      onClick={openPresentOffersModal}
+                    >
                       PRESENT OFFERS
-                      <div className={styles.img_tooltip}>
-                        <Image
-                          src={presentOffers}
-                          alt="Present Offers as per OMNI"
-                          width={500}
-                          height={350}
-                        />
-                      </div>
                     </button>
+                    <CustomModal
+                      isOpen={isPresentOffersModalOpen}
+                      onRequestClose={closePresentOffersModal}
+                      contentLabel="presentOffers"
+                    >
+                      <Image
+                        src={presentOffers}
+                        className={styles.img_InModal}
+                        alt="Present Offers as per OMNI"
+                        //width={500}
+                        //height={350}
+                      />
+                    </CustomModal>
                   </div>
                   <ReactMarkdown>
                     {sc_one_content.attributes.NCRShortTermLoan}

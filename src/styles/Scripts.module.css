@@ -109,13 +109,13 @@
 
 .card {
   /* font-size: 17px; */
-  padding: 15px;
+  /* padding: 10px; */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
   width: fit-content;
   height: fit-content;
   border-radius: 4px;
   float: left;
-  padding: 0 10px;
+  padding: 0 5px;
   /* background-color: #abc6f2; */
   background-color: #002b4d;
   color: whitesmoke;

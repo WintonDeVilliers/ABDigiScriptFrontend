@@ -80,7 +80,7 @@ export default function Products({ sc_one_contents }) {
             </div>
           </div>
 
-          <div id="BANKING" className={styles.open_section}>
+          {/* <div id="BANKING" className={styles.open_section}>
             <h1 className={styles.headline}>
               <mark className={styles.mark}>BANKING</mark>
             </h1>
@@ -96,7 +96,7 @@ export default function Products({ sc_one_contents }) {
             <h1 className={styles.headline}>
               <mark className={styles.mark}>INVESTMENTS</mark>
             </h1>
-          </div>
+          </div> */}
 
           {/* DATA MAP/LOOP END */}
         </div>

@@ -3,20 +3,23 @@ import styles from "../styles/Scripts.module.css";
 import FirstCallHeader from "@/components/FirstCallHeader";
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
-import foreignNational from "../../public/foreignNationalDocuments.png";
+
 import presentOffers from "../../public/presentOffers.png";
 import React, { useState } from "react";
 import CustomModal from "./../components/CustomModal";
+import passportCustomers from "../../../digi-script-backend/public/uploads/foreign_National_Documents_45faf2675c.png";
 
 export const getServerSideProps = async () => {
   const res = await fetch(process.env.NEXT_PUBLIC_URL_SALES_FIRST_CALL);
-
   const sc_one_contents = await res.json();
+
   console.log(sc_one_contents);
   return { props: { sc_one_contents } };
 };
 
 export default function Call_scripts({ sc_one_contents }) {
+  if (!sc_one_contents) return <div>Loading...</div>;
+
   const [isObjectionModalOpen, setIsObjectionModalOpen] = useState(false);
   const [isForeignNationalModalOpen, setIsForeignNationalModalOpen] =
     useState(false);
@@ -192,8 +195,6 @@ export default function Call_scripts({ sc_one_contents }) {
   //   setIs(false);
   // };
 
-  if (!sc_one_contents) return <div>Loading...</div>;
-
   return (
     <>
       {/* NAVIGATION BAR */}
@@ -222,16 +223,16 @@ export default function Call_scripts({ sc_one_contents }) {
                   <ReactMarkdown>
                     {sc_one_content.attributes.SignalAppInitiation}
                   </ReactMarkdown>
-                  <ReactMarkdown>
+                  {/* <ReactMarkdown>
                     {sc_one_content.attributes.CommonObjections}
-                  </ReactMarkdown>
+                  </ReactMarkdown> */}
                   {/*FREQUENT OBJECTION BUTTON(s)*/}
                   {/* MODAL */}
                   <button
                     className={styles.modal_btn}
                     onClick={openObjectionModal}
                   >
-                    Open Modal
+                    COMMON OBJECTIONS
                   </button>
                   <CustomModal
                     isOpen={isObjectionModalOpen}
@@ -331,12 +332,11 @@ export default function Call_scripts({ sc_one_contents }) {
                     contentLabel="label"
                   >
                     <h2>FOREIGN NATIONAL</h2>
+
                     <Image
-                      src={foreignNational}
+                      src={passportCustomers}
                       alt="Ask aobut Permit expiration"
                       className={styles.img_InModal}
-                      // width={400}
-                      // height={350}
                     />
                   </CustomModal>
                 </div>
@@ -688,17 +688,45 @@ export default function Call_scripts({ sc_one_contents }) {
                       {sc_one_content.attributes.OverdraftBenefits}
                     </ReactMarkdown>
                   </CustomModal>
-                  {/* <button className={styles.wrapper}>
-                    Overdraft Benefits
-                    <div className={styles.tooltip}>
-                      <span>
-                        <ReactMarkdown>
-                          {sc_one_content.attributes.OverdraftBenefits}
-                        </ReactMarkdown>
-                      </span>
-                    </div>
-                  </button> */}
                 </div>
+                <ReactMarkdown>
+                  {sc_one_content.attributes.TechCredit}
+                </ReactMarkdown>
+                <div>
+                  <button
+                    className={styles.modal_btn}
+                    onClick={openTechCreditModal}
+                  >
+                    TECH CREDIT
+                  </button>
+                  <CustomModal
+                    isOpen={isTechCreditModalOpen}
+                    onRequestClose={closeTechCreditModal}
+                    contentLabel="techcredit"
+                  >
+                    <ReactMarkdown>
+                      {sc_one_content.attributes.TechCreditBenefits}
+                    </ReactMarkdown>
+                  </CustomModal>
+                </div>
+                <ReactMarkdown>{sc_one_content.attributes.NCR}</ReactMarkdown>
+                <div>
+                  <button
+                    className={styles.modal_btn}
+                    onClick={openNCRLoanModal}
+                  >
+                    NCR LOAN
+                  </button>
+                  <CustomModal
+                    isOpen={isNCRLoanModalOpen}
+                    onRequestClose={closeNCRLoanModal}
+                  >
+                    <ReactMarkdown>
+                      {sc_one_content.attributes.NCRBenefits}
+                    </ReactMarkdown>
+                  </CustomModal>
+                </div>
+
                 <br />
               </div>
               {/* PENDING APP OUTCOME CARD */}
@@ -767,57 +795,12 @@ export default function Call_scripts({ sc_one_contents }) {
                     onClick={openCreditLifeFaqModal}
                   >
                     CREDIT LIFE FAQ's
-                    {/* <div className={styles.tooltip}>
-                      <span>
-                        <ReactMarkdown>
-                          {sc_one_content.attributes.CREDITLIFEFAQS}
-                        </ReactMarkdown>
-                      </span>
-                    </div> */}
                   </button>
                   <CustomModal
                     isOpen={isCreditLifeFaqModalOpen}
                     onRequestClose={closeCreditLifeFaqModal}
                   >
                     <h2>Credit Life</h2>
-                  </CustomModal>
-                </div>
-                <p />
-                <ReactMarkdown>
-                  {sc_one_content.attributes.TechCredit}
-                </ReactMarkdown>
-                <div>
-                  <button
-                    className={styles.modal_btn}
-                    onClick={openTechCreditModal}
-                  >
-                    TECH CREDIT
-                  </button>
-                  <CustomModal
-                    isOpen={isTechCreditModalOpen}
-                    onRequestClose={closeTechCreditModal}
-                    contentLabel="techcredit"
-                  >
-                    <ReactMarkdown>
-                      {sc_one_content.attributes.TechCreditBenefits}
-                    </ReactMarkdown>
-                  </CustomModal>
-                </div>
-                <ReactMarkdown>{sc_one_content.attributes.NCR}</ReactMarkdown>
-                <div>
-                  <button
-                    className={styles.modal_btn}
-                    onClick={openNCRLoanModal}
-                  >
-                    NCR LOAN
-                  </button>
-                  <CustomModal
-                    isOpen={isNCRLoanModalOpen}
-                    onRequestClose={closeNCRLoanModal}
-                  >
-                    <ReactMarkdown>
-                      {sc_one_content.attributes.NCRBenefits}
-                    </ReactMarkdown>
                   </CustomModal>
                 </div>
                 <p />

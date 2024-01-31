@@ -46,6 +46,7 @@ export default function Real_Offer_Script({ sc_one_contents }) {
   const [isRewardsBenefitsOpen, setIsRewardsBenefitsOpen] = useState(false);
 
   const [isDebiCheckModalOpen, setIsDebiCheckModalOpen] = useState(false);
+  const [isLevelUpModalOpen, setIsLevelUpModalOpen] = useState(false);
   // debicheck  -- wide modal to cater for loan and credit
 
   // capturetips x3 screenshots (TBD QA sourcing)
@@ -134,6 +135,14 @@ export default function Real_Offer_Script({ sc_one_contents }) {
 
   const closeDebiCheckModal = () => {
     setIsDebiCheckModalOpen(false);
+  };
+
+  const openLevelUpModal = () => {
+    setIsLevelUpModalOpen(true);
+  };
+
+  const closeLevelUpModal = () => {
+    setIsLevelUpModalOpen(false);
   };
   // const  = () => {
 
@@ -248,9 +257,58 @@ export default function Real_Offer_Script({ sc_one_contents }) {
                   <ReactMarkdown>
                     {sc_one_content.attributes.NCRShortTermLoan}
                   </ReactMarkdown>
+                  <button
+                    className={styles.modal_btn}
+                    onClick={openNCRLoanModal}
+                  >
+                    NCR BENEFITS
+                  </button>
+                  <CustomModal
+                    isOpen={isNCRLoanModalOpen}
+                    onRequestClose={closeNCRLoanModal}
+                    contentLabel="NCR"
+                  >
+                    <ReactMarkdown>
+                      {sc_one_content.attributes.NCRBenefits}
+                    </ReactMarkdown>
+                  </CustomModal>
+
                   <ReactMarkdown>
                     {sc_one_content.attributes.TechCredit}
                   </ReactMarkdown>
+                  <button
+                    className={styles.modal_btn}
+                    onClick={openTechCreditModal}
+                  >
+                    TECH CREDIT BENEFITS
+                  </button>
+                  <CustomModal
+                    isOpen={isTechCreditModalOpen}
+                    onRequestClose={closeTechCreditModal}
+                    contentLabel="techCredit"
+                  >
+                    <ReactMarkdown>
+                      {sc_one_content.attributes.TechCreditBenefits}
+                    </ReactMarkdown>
+                  </CustomModal>
+
+                  <p />
+                  <button
+                    className={styles.modal_btn}
+                    onClick={openLevelUpModal}
+                  >
+                    LEVEL UP
+                  </button>
+
+                  <CustomModal
+                    isOpen={isLevelUpModalOpen}
+                    onRequestClose={closeLevelUpModal}
+                    contentLabel="levelup"
+                  >
+                    <ReactMarkdown>
+                      {sc_one_content.attributes.LevelUpTiers}
+                    </ReactMarkdown>
+                  </CustomModal>
                 </div>
               </div>
 
@@ -277,12 +335,47 @@ export default function Real_Offer_Script({ sc_one_contents }) {
                           .MyWorldDisbursementConversation
                       }
                     </ReactMarkdown>
+
+                    <button
+                      className={styles.modal_btn}
+                      onClick={openMyWorldBenefistsModal}
+                    >
+                      MyWORLD BENEFITS
+                    </button>
+
+                    <CustomModal
+                      isOpen={isMyWorldBenefitsOpen}
+                      onRequestClose={closeMyWorlBenefitsModal}
+                      contentLabel="myworld"
+                    >
+                      {" "}
+                      <ReactMarkdown>
+                        {sc_one_content.attributes.MyWorldBenefits}
+                      </ReactMarkdown>
+                    </CustomModal>
+                    <p />
                   </div>
 
                   <div className={styles.card}>
                     <ReactMarkdown>
                       {sc_one_content.attributes.Rewards}
                     </ReactMarkdown>
+                    <button
+                      className={styles.modal_btn}
+                      onClick={openRewardsBenefitsModal}
+                    >
+                      REWARDS BENEFITS
+                    </button>
+                    <CustomModal
+                      isOpen={isRewardsBenefitsOpen}
+                      onRequestClose={closeRewardsBenefitsModal}
+                      contentLabel="rewards"
+                    >
+                      <ReactMarkdown>
+                        {sc_one_content.attributes.RewardsBenefits}
+                      </ReactMarkdown>
+                    </CustomModal>
+                    <p />
                   </div>
 
                   <div className={styles.card}>

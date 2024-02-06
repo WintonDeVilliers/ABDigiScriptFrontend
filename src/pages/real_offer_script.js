@@ -4,7 +4,7 @@ import RealOfferHeader from "@/components/RealOfferHeader";
 // import Script from 'next/script'
 // import Link from 'next/link'
 import ReactMarkdown from "react-markdown";
-import Image from "next/image";
+// import Image from "next/image";
 import foreignNational from "../../public/foreignNationalDocuments.png";
 import presentOffers from "../../public/presentOffers.png";
 import React, { useState } from "react";
@@ -245,13 +245,11 @@ export default function Real_Offer_Script({ sc_one_contents }) {
                       onRequestClose={closePresentOffersModal}
                       contentLabel="presentOffers"
                     >
-                      <Image
+                      {/* <Image
                         src={presentOffers}
                         className={styles.img_InModal}
                         alt="Present Offers as per OMNI"
-                        //width={500}
-                        //height={350}
-                      />
+                      /> */}
                     </CustomModal>
                   </div>
                   <ReactMarkdown>

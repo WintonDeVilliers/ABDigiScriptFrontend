@@ -2,7 +2,7 @@ import styles from "../styles/Scripts.module.css";
 // import Footer from "@/components/Footer";
 import FirstCallHeader from "@/components/FirstCallHeader";
 import ReactMarkdown from "react-markdown";
-import Image from "next/image";
+// import Image from "next/image";
 
 import presentOffers from "../../public/presentOffers.png";
 import React, { useState } from "react";
@@ -332,12 +332,12 @@ export default function Call_scripts({ sc_one_contents }) {
                     contentLabel="label"
                   >
                     <h2>FOREIGN NATIONAL</h2>
-
+                    {/* 
                     <Image
                       src={passportCustomers}
                       alt="Ask aobut Permit expiration"
                       className={styles.img_InModal}
-                    />
+                    /> */}
                   </CustomModal>
                 </div>
                 <br />
@@ -392,10 +392,6 @@ export default function Call_scripts({ sc_one_contents }) {
                     </div>
                   </button> */}
                 </div>
-
-                <ReactMarkdown>
-                  {sc_one_content.attributes.MarketingConsent}
-                </ReactMarkdown>
                 <ReactMarkdown>
                   {sc_one_content.attributes.ConsentToProcessInfo}
                 </ReactMarkdown>
@@ -416,6 +412,10 @@ export default function Call_scripts({ sc_one_contents }) {
                     </ReactMarkdown>
                   </CustomModal>
                 </div>
+                <ReactMarkdown>
+                  {sc_one_content.attributes.MarketingConsent}
+                </ReactMarkdown>
+
                 <br />
               </div>
               {/* CUSTOMER AUTH CARD */}
@@ -440,16 +440,6 @@ export default function Call_scripts({ sc_one_contents }) {
                       {sc_one_content.attributes.PREQUALNOTMET}
                     </ReactMarkdown>
                   </CustomModal>
-                  {/* <button className={styles.wrapper}>
-                    PRE-QUALIFICATION NOT MET
-                    <div className={styles.tooltip}>
-                      <span>
-                        <ReactMarkdown>
-                          {sc_one_content.attributes.PREQUALNOTMET}
-                        </ReactMarkdown>
-                      </span>
-                    </div>
-                  </button> */}
                 </div>
                 <br />
                 <div>
@@ -776,16 +766,14 @@ export default function Call_scripts({ sc_one_contents }) {
                     contentLabel="presentOffers"
                   >
                     <h2>Present Offers</h2>
-                    <Image
+                    {/* <Image
                       src={presentOffers}
                       alt="Ask Read All Offers as per OMNI"
                       className={styles.img_InModal}
-                    />
+                    /> */}
                   </CustomModal>
                 </div>
-                <ReactMarkdown>
-                  {sc_one_content.attributes.DebiCheck}
-                </ReactMarkdown>
+
                 <ReactMarkdown>
                   {sc_one_content.attributes.CreditLifeCover}
                 </ReactMarkdown>
@@ -823,6 +811,9 @@ export default function Call_scripts({ sc_one_contents }) {
                 <div className={styles.card}>
                   <ReactMarkdown>
                     {sc_one_content.attributes.Documentation}
+                  </ReactMarkdown>
+                  <ReactMarkdown>
+                    {sc_one_content.attributes.DebiCheck}
                   </ReactMarkdown>
                   <ReactMarkdown>
                     {sc_one_content.attributes.ApprovedConclusion}

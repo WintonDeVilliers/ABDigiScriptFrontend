@@ -2,6 +2,8 @@ import styles from "../styles/Scripts.module.css";
 import Footer from "@/components/Footer";
 import FuneralCoverHeader from "@/components/FuneralCoverHeader";
 import ReactMarkdown from "react-markdown";
+import React, { useState } from "react";
+import CustomModal from "./../components/CustomModal";
 
 export const getServerSideProps = async () => {
   const res = await fetch(process.env.NEXT_PUBLIC_URL_FUNERAL_CALL);
@@ -13,6 +15,15 @@ export const getServerSideProps = async () => {
 
 export default function FuneralCoverScript({ sc_one_contents }) {
   if (!sc_one_contents) return <div>Loading...</div>;
+  const [isBenefitsModalOpen, setIsBenefitsModalOpen] = useState(false);
+
+  const openBenefitsModal = () => {
+    setIsBenefitsModalOpen(true);
+  };
+
+  const closeBenfitsModal = () => {
+    setIsBenefitsModalOpen(false);
+  };
 
   return (
     <>
@@ -41,13 +52,24 @@ export default function FuneralCoverScript({ sc_one_contents }) {
                 <ReactMarkdown>
                   {sc_one_content.attributes.UpsellCoverAmount}
                 </ReactMarkdown>
+                <button
+                  className={styles.modal_btn}
+                  onClick={openBenefitsModal}
+                >
+                  BENEFITS
+                </button>
+                <CustomModal
+                  isOpen={isBenefitsModalOpen}
+                  onRequestClose={closeBenfitsModal}
+                  contentLabel="benefits"
+                >
+                  <ReactMarkdown>
+                    {sc_one_content.attributes.Benefits}
+                  </ReactMarkdown>
+                </CustomModal>
               </div>
 
               <div className={styles.card}>
-                <ReactMarkdown>
-                  {sc_one_content.attributes.Benefits}
-                </ReactMarkdown>
-
                 <ReactMarkdown>
                   {sc_one_content.attributes.RegulatoryStatements}
                 </ReactMarkdown>
@@ -86,7 +108,7 @@ export default function FuneralCoverScript({ sc_one_contents }) {
 
           <div id="APPSTART" className={styles.open_section}>
             <h1 className={styles.headline}>
-              <mark className={styles.mark}>INTRODUCTION</mark>
+              <mark className={styles.mark}>CAPTURE DETAILS</mark>
             </h1>
 
             <div className={styles.card_content_area}>
@@ -132,7 +154,7 @@ export default function FuneralCoverScript({ sc_one_contents }) {
 
             <div id="CLOSEOUT" className={styles.open_section}>
               <h1 className={styles.headline}>
-                <mark className={styles.mark}>INTRODUCTION</mark>
+                <mark className={styles.mark}>CLOSE OUT</mark>
               </h1>
             </div>
 

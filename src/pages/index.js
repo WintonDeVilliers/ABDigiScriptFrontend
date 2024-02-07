@@ -5,7 +5,7 @@ import HomePageHeader from "@/components/HomePageHeader";
 import ReactMarkdown from "react-markdown";
 import nbstyles from "../styles/NoticeBoard.module.css";
 
-/*  getServerSideProps: func will await response from strapi CRM */
+ // getServerSideProps: func will await response from strapi CRM 
 export const getServerSideProps = async () => {
   const res = await fetch(process.env.NEXT_PUBLIC_URL_NOTICEBOARD);
   const data = await res.json();
@@ -35,6 +35,7 @@ export default function Home({ strapi_res_data }) {
                     <th scope="col">Description</th>
                   </tr>
                 </thead>
+                
                 <tbody>
                   {strapi_res_data.map((item, rowIndex) => (
                     <React.Fragment key={rowIndex}>
@@ -49,6 +50,9 @@ export default function Home({ strapi_res_data }) {
                     </React.Fragment>
                   ))}
                 </tbody>
+                
+                
+
               </table>
             </div>
             {/* TABLE CONTAINER END */}

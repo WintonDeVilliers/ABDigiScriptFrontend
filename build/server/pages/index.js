@@ -160,8 +160,7 @@ react_markdown__WEBPACK_IMPORTED_MODULE_3__ = (__webpack_async_dependencies__.th
 
 
 
-
-/*  getServerSideProps: func will await response from strapi CRM */
+ // getServerSideProps: func will await response from strapi CRM 
 
 
 

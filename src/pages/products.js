@@ -2,7 +2,7 @@ import styles from "../styles/Scripts.module.css";
 import Link from "next/link";
 import ProductPageHeader from "../components/ProductPageHeader";
 import ReactMarkdown from "react-markdown";
-import Image from "next/image";
+// import Image from "next/image";
 import React from "react";
 
 export const getServerSideProps = async () => {

@@ -4,10 +4,10 @@ import FirstCallHeader from "@/components/FirstCallHeader";
 import ReactMarkdown from "react-markdown";
 // import Image from "next/image";
 
-import presentOffers from "../../public/presentOffers.png";
+// import presentOffers from "../../public/presentOffers.png";
 import React, { useState } from "react";
 import CustomModal from "./../components/CustomModal";
-import passportCustomers from "../../../digi-script-backend/public/uploads/foreign_National_Documents_45faf2675c.png";
+// import passportCustomers from "./../../public/foreignNationalDocuments.png";
 
 export const getServerSideProps = async () => {
   const res = await fetch(process.env.NEXT_PUBLIC_URL_SALES_FIRST_CALL);

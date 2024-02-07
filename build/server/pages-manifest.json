@@ -1,15 +1,15 @@
 {
+  "/_error": "pages/_error.js",
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
-  "/_error": "pages/_error.js",
   "/api/questions": "pages/api/questions.js",
-  "/checklist_plain": "pages/checklist_plain.html",
   "/checklist": "pages/checklist.html",
-  "/first_call_scripts": "pages/first_call_scripts.js",
-  "/funeral_cover_script": "pages/funeral_cover_script.js",
-  "/": "pages/index.js",
+  "/checklist_plain": "pages/checklist_plain.html",
   "/modal_page": "pages/modal_page.html",
-  "/real_offer_script": "pages/real_offer_script.js",
+  "/funeral_cover_script": "pages/funeral_cover_script.js",
   "/products": "pages/products.js",
+  "/": "pages/index.js",
+  "/real_offer_script": "pages/real_offer_script.js",
+  "/first_call_scripts": "pages/first_call_scripts.js",
   "/404": "pages/404.html"
 }
